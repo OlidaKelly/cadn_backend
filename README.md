@@ -12,9 +12,7 @@
 - ```npm start```
 
 ### Entrypoint available :
-- 'http://localhost:8000/home'
-- 'http://localhost:8000/security/registration'
-- 'http://localhost:8000/security/login'
+- 'http://localhost:5000
 
 ### Create your own entrypoints (following MVC architecture)
 
