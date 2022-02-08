@@ -1,297 +1,352 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le : ven. 17 déc. 2021 à 10:49
--- Version du serveur :  5.7.34
--- Version de PHP : 7.4.21
-SET
-  SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- Hôte : localhost:3306
+-- Généré le : mar. 08 fév. 2022 à 08:47
+-- Version du serveur :  8.0.27-0ubuntu0.20.04.1
+-- Version de PHP : 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET
-  time_zone = "+00:00";
-  /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-  /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-  /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-  /*!40101 SET NAMES utf8mb4 */;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
-  -- Base de données : `cadn`
-  --
-  -- --------------------------------------------------------
-  --
-  -- Structure de la table `about`
-  --
-  CREATE TABLE `about` (
-    `id` int(11) NOT NULL,
-    `fullname` varchar(255) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `phone` varchar(255) NOT NULL,
-    `description` text NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+-- Base de données : `cadn`
+--
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `article`
-  --
-  CREATE TABLE `article` (
-    `id` int(11) NOT NULL,
-    `title` varchar(255) NOT NULL,
-    `description` text NOT NULL,
-    `image` varchar(255) NOT NULL,
-    `date` date NOT NULL,
-    `id_category` int(11) NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Structure de la table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `about`
+--
+
+INSERT INTO `about` (`id`, `fullname`, `phone`, `email`, `description`, `address`, `image`) VALUES
+(1, 'Cynthia Diefenbronn', '07 69 72 82 42', 'contact@cynthianutrition-naturo.com', '<span id=\"\\&quot;docs-internal-guid-1bc68072-7fff-7808-efa6-a9463153901a\\&quot;\"><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\"><span id=\"\\&quot;docs-internal-guid-c9f9dd42-7fff-611e-7a6f-0b673d5deb2b\\&quot;\"><h2 style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">Un passé</h2><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">Je m’appelle Cynthia, j’ai 30 ans et je réside dorénavant dans le Sud-Ouest de la France, entre les Landes (40) et le Pays Basque (64).\\nDe base scientifique et après 6 ans d’études en agencement d’intérieur et management de projets de construction, j’ai travaillé plusieurs années dans le retail et fit-out et suivi les travaux de boutiques, bureaux, hôtels et restaurants sur Paris, avant de me rendre à l’évidence que cette carrière n’était pas faite pour moi. Je n’avais clairement plus aucun moment à me consacrer, me donnais entièrement dans mon métier et perdais, années après années, cette énergie et ce grain de folie qui me collaient à la peau. Cette vie professionnelle était bien loin de mes valeurs, je ne m’épanouissais pas dans ce que je faisais, ni où je vivais, et je m’éloignais de plus en plus de la vie qui me rendrait heureuse.&nbsp;</div><h2 style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">Mon présent&nbsp;</h2><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">Après quelques voyages humanitaires en Asie et en Afrique, j’ai toujours été animée par ce besoin d’aider mon prochain, de conseiller, d’accompagner et de redonner la joie de vivre et la vitalité qui devraient tous nous habiter. J’ai aussi toujours été attirée par la nature, les grands espaces, les océans et les montagnes et j’avais plus que jamais besoin de changer d’environnement et de me reconnecter à mes véritables aspirations.\\nPassionnée de diététique et nutrition santé, très sportive et baignant dans l’alimentation saine et les thérapies naturelles depuis mon enfance, mes expériences et mon mode de vie m’ont donc amenée à reconsidérer mes objectifs professionnels afin d’allier, passion et métier. J’ai alors tout quitté pour repartir sur un tout nouveau projet, bien loin de cette grande ville qui m’oppressait et de cette carrière étouffante et dévitalisante. Ainsi je décidai, en 2020, de retourner sur les bancs de l’université et de me former à la nutrition santé, aux thérapies naturelles et à la diététique chinoise, dans le but d’aider et de conseiller chacun à prendre soin de sa santé par l’alimentation, une hygiène de vie et une activité physique adaptées.&nbsp;</div><h2 style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">Votre futur</h2><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">&nbsp;Année universitaire conclue par un stage professionnel de 5 mois auprès d’une naturopathe et nutrithérapeute et diplômée depuis Septembre 2021, je vous accompagne vers un mieux-être et une pleine santé grâce à la nutrition santé, la naturopathie et la diététique chinoise, mais aussi grâce à l’activité physique adaptée, faisant partie prenante d’une bonne hygiène de vie et d’un équilibre physique, psychique et émotionnel.\\n \\nAfin de vous guider et de vous emmener sur ce chemin de santé holistique et naturelle, je consulte en cabinet, à votre domicile (40440 Ondres + 30 kms) et également à distance en visio ou par téléphone. Ayant étudié en Angleterre et travaillé ma première partie de carrière pour une entreprise internationale, je consulte également en anglais.&nbsp;</div><h2 style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">Mes formations</h2><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">2020-2021 : Licence Professionnelle en Conseils en Alimentation et Nutrition Santé - Université Catholique de l’Ouest (UCO), Guingamp (Bretagne). Mention très bien.&nbsp;</div><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\"><br></div><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\"><span style=\"font-family: var(--font);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Mars à Août 2021 : stage professionnel de fin d’études auprès de Nadia RASAMOELY, naturopathe et nutrithérapeute, Centre Holista Sano – Biarritz.&nbsp;</span><br></div><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\"><br></div><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\">2020-2021 : Diplôme Universitaire en Thérapies Naturelles et Diététique Chinoise - Université Catholique de l’Ouest (UCO), Guingamp (Bretagne). Mention très bien.\\n \\n2019 : Brevet Initiateur Commando dans l’Armée de Terre – Centre National d’Entrainement Commando de Mont-Louis et Collioure.</div><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\"><br></div><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" vertical-align:=\"\" baseline;\\\"=\"\">2019&nbsp;: </span><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" vertical-align:=\"\" baseline;\\\"=\"\">Brevet Initiateur </span><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" text-decoration-skip-ink:=\"\" none;=\"\" vertical-align:=\"\" baseline;\\\"=\"\">Commando</span><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" vertical-align:=\"\" baseline;\\\"=\"\"> dans l’Armée de Terre</span><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" vertical-align:=\"\" baseline;\\\"=\"\"> –</span><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" vertical-align:=\"\" baseline;\\\"=\"\"> Centre National d’Entrainement Commando de Mont-Louis et Collioure.</span></span><br></div><div style=\"\\&quot;line-height:\" 1.38;=\"\" margin-top:=\"\" 0pt;=\"\" margin-bottom:=\"\" 0pt;\\\"=\"\"><span><span style=\"\\&quot;font-variant-numeric:\" normal;=\"\" font-variant-east-asian:=\"\" vertical-align:=\"\" baseline;\\\"=\"\"><br></span></span></div></span>', '30 chemin de tambourin, Résidence Selena 40440 Ondres', 'http://localhost:5000/images/image-1644225975757.jpg');
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `category`
-  --
-  CREATE TABLE `category` (
-    `id` int(11) NOT NULL,
-    `name` varchar(255) NOT NULL,
-    `image` varchar(255) NOT NULL,
-    `description` text NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
 --
-  -- Déchargement des données de la table `category`
-  --
-INSERT INTO
-  `category` (`id`, `name`, `image`, `description`)
-VALUES
-  (1, 'Naturopathie', '', ''),
-  (2, 'Nutrition Santé', '', ''),
-  (3, 'Diététique Chinoise', '', ''),
-  (4, 'Accompagnement Sportif', '', '');
+-- Structure de la table `article`
+--
+
+CREATE TABLE `article` (
+  `id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `id_category` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `contact`
-  --
-  CREATE TABLE `contact` (
-    `id` int(11) NOT NULL,
-    `firstname` varchar(255) NOT NULL,
-    `lastname` varchar(255) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `message` text NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Structure de la table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `image`, `description`) VALUES
+(1, 'Nutrition - Naturopathie', 'https://images.pexels.com/photos/7615463/pexels-photo-7615463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', '<div><br></div><div><span id=\"docs-internal-guid-5da6d69d-7fff-a7c6-a8e0-a71f39c592f6\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La naturopathie est une « </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>médecine traditionnelle occidentale</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">&nbsp;» reconnue par l’Organisation Mondiale de la Santé (OMS, 2001). Le mot a pour étymologie les mots anglais « nature » et « path », signifiant la « Voie de la nature ». En effet, il s’agit d’une «&nbsp;médecine non conventionnelle&nbsp;», dont les valeurs sont l’éducation au bien-être, la prévention des maladies et l’optimisation de la santé par l’utilisation de méthodes </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>naturelles</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">. L’objectif de cette approche complémentaire de la santé est d’utiliser les ressources disponibles dans la nature, pour prévenir, soulager et traiter des pathologies mais surtout d’améliorer le </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>bien-être</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> et préserver une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>santé optimale</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">.</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\">&nbsp;</p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span id=\"docs-internal-guid-8d5c6c18-7fff-494f-fdd5-52790a1ba9a1\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">En tenant compte de la personne dans sa dimension physique, psychique et émotionnelle, la naturopathie est un domaine de médecine dit « </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>holistique</b> </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">» car elle aborde la personne dans sa </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>globalité</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">. Cette pratique vise à renforcer l’</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>immunité</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> de notre organisme, grâce à des méthodes biologiques et naturelles, en se basant sur le principe de </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">l’<b>auto-guérison</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> du corps. A partir de méthodes et remèdes entièrement naturels, la naturopathie vise à rendre chacun autonome et responsable dans le maintien et la gestion de sa santé. En ce sens, la naturopathie fournit les outils naturels et connaissances nécessaires pour une meilleure prise de conscience de l’impact de nos choix alimentaires et de notre hygiène de vie sur notre santé, afin de rétablir l’</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>équilibre</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, restaurer la </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>vitalité</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> et atteindre une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>santé holistique</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> sur le long terme.</span></span><br></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><br></p><h2 style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\">Une approche holistique complémentaire de la médecine allopathique</h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 7.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 7.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">En accord avec le code de la santé publique, la naturopathie ne fait pas de diagnostic, ne donne pas de traitement, d’avis médical ou d’actes médicaux. Elle respecte tout traitement médical ou soins médicaux en cours et </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>ne se substitue en aucun cas à une consultation médicale</b>.</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">&nbsp;</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La Naturopathie est alors un outil efficace pour prévenir des maladies, améliorer et soulager durablement les troubles quotidiens et préserver la santé, ce qui fait d’elle une très bonne approche de santé naturelle en </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>complément</b> </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">de la médecine allopathique, qui est une médecine d’urgence vitale.</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></p><h2 style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\">Le rendez-vous avec votre naturopathe</h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span id=\"docs-internal-guid-65746ac4-7fff-ad18-3e8b-c9639d6f0fd1\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Une « consultation » ne consiste pas à établir un diagnostic ni à prescrire des médicaments. Le Naturopathe prodigue des conseils dans le cadre de la santé naturelle, en dehors du cadre de la médecine conventionnelle.&nbsp; Pour cela, le Naturopathe vous conseille, voire même pratique, selon ses affinités, certaines </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>thérapies naturelles</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">&nbsp;: aromathérapie, phytothérapie, micronutrition, Fleurs de Bach, relaxation, activité physique, massage, hydrothérapie, etc. Dans une démarche de </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>santé holistique</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> et de </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>conseils personnalisés</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, le Naturopathe possède la formation et l’expérience nécessaires pour vous proposer certaines de ces thérapies ou il pourra, le cas échéant, vous orienter vers un praticien expérimenté dans l’une ou l’autre de ces disciplines.</span></span><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></p><h2 style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\">Mon approche et mes spécialités</h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span id=\"docs-internal-guid-f010e305-7fff-8b8a-f9a1-215712969bcd\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Je considère la naturopathie comme&nbsp; un art d’être et de rester en bonne santé, ce qui passe naturellement par un état d’esprit, une façon de penser, de vivre et de s’alimenter. Grâce à un </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>rééquilibrage alimentaire</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, je vous propose de réapprendre à&nbsp;manger&nbsp;plus sainement, selon vos besoins,&nbsp;en vous réappropriant&nbsp;votre corps et vos sensations pour que vous retrouviez forme et vitalité, sans avoir faim et sans régime! Allier plaisir et santé&nbsp;pour se sentir bien dans son corps et dans sa tête est essentiel pour retrouver une bonne hygiène de vie, en faisant les bons choix,&nbsp;sans vous priver. Je vous propose l’alimentation santé, la plus naturelle et vivifiante possible, qui saura répondre à vos besoins, tout en soulageant vos troubles de santé, afin d\'améliorer votre&nbsp;qualité de vie et votre bien-être durablement.</span></span><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><br></span></span></p><h3 dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><br></h3><p dir=\"ltr\" style=\"line-height:1.2;margin-top:0pt;margin-bottom:10pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">En plus de l’alimentation santé issue des principes naturopathiques, j’utilise principalement </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>l’aromathérapie et la phytothérapie</b>, </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">en association à la nutrithérapie,</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">afin de prendre en charge de manière holistique votre santé organique, physique et psychique, et d’optimiser l’atteinte d’un équilibre et d’un mieux-être de manière globale, douce et sereine.&nbsp;</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Et puisqu’un corps et un esprit en pleine santé passent aussi, en naturopathie, par </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>l’activité physique</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, je vous guide, en tant que sportive aguerrie et addicte, vers la ou les activités physiques qui vous conviennent le mieux et adaptées à votre condition physique.</span><span><span style=\"font-size: 11pt; font-family: Cambria, serif; color: rgb(31, 73, 125); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-line: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;\"><br></span></span></p></span></div><div><br></div>'),
+(2, 'Nutrition Santé - Nutrithérapie', 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260', '<span id=\"docs-internal-guid-c2cf48c1-7fff-6f31-f42e-72fe2b7fd3d6\"><h2 style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\">La nutrition santé</span></h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-3f86de5a-7fff-6f34-288c-86cf97763434\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La nutrition santé est tout simplement l’action de bien manger : en choisissant correctement ses aliments</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">,&nbsp;en respectant les&nbsp;équilibres alimentaires&nbsp;importants, en tenant compte des besoins propres à&nbsp;chaque âge mais aussi des besoins propres à chacun en fonction de son mode de vie, de son activité physique, de son passé, de sa génétique ou encore de son tempérament.</span></span><br></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><br></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-a31be69e-7fff-8d21-e70d-031725205182\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Les liens entre nutrition et santé sont de plus en plus connus, et le risque de développer de nombreuses maladies chroniques ou auto-immunes&nbsp;(cancer, maladies cardiovasculaires, obésité, diabète, troubles thyroïdiens, sclérose en plaques, etc.) peut être réduit grâce à une alimentation santé préventive, vivante et énergétique.</span></span><br></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><h2 style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-1a7c94bd-7fff-89d4-6f45-c73199aee430\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\">La nutrithérapie</span></span></span></h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-1f63450f-7fff-c299-12a0-38459ad42a9c\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>thérapie en nutrition santé</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, ou <b>nutrithérapie</b>, est une thérapie visant à rétablir et à optimiser les fonctions de l’organisme grâce à l’alimentation et à la micronutrition. Par les bienfaits démontrés et prouvés scientifiquement des nutriments et de certains aliments, la nutrithérapie aide l’organisme à retrouver un fonctionnement normal et optimal, pouvant ainsi agir sur les troubles neurologiques, digestifs, musculo-squelettiques, hormonaux et endocriniens.</span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-e86d9297-7fff-f129-fb8d-4c927d52cb1a\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">En effet, de nombreuses&nbsp;études épidémiologiques&nbsp;ont permis d’établir qu’</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>une alimentation suffisante, équilibrée et diversifiée</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">&nbsp;est indispensable à la&nbsp;croissance, au maintien de l’immunité, à la fertilité ou encore à un vieillissement sain (performances cognitives, entretien de la masse musculaire, maintien de la libido, lutte contre les infections…). Ces études montrent aussi que certains aliments,&nbsp;nutriments&nbsp;et comportements augmentent le risque de développer certaines pathologies alors que d’autres vont, au contraire, avoir une action préventive.</span></span><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-9bc3ef3d-7fff-1b93-5886-ba6d8b3e905a\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La&nbsp;</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>Nutrithérapie</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> est donc une approche naturelle de la nutrition qui permet de réguler les&nbsp;apports nutritionnels&nbsp;et vitaminiques de l’organisme grâce à un rééquilibrage alimentaire et micronutritionnel. Les problèmes de santé et le développement des maladies, conséquences de dysfonctionnement d’un ou plusieurs systèmes de l’organisme, sont majoritairement le résultat de carences nutritionnelles, comme une voiture qui ne démarrerait plus si on l’avait remplie avec le mauvais carburant.</span></span><span><span style=\"font-size: 11pt; font-family: Cambria, serif; color: rgb(31, 73, 125); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><h2 style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-21f15bf4-7fff-976b-d6e4-4ec4b9982b54\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\">La micronutrition</span></span></span></h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-94d13122-7fff-c6a8-796d-046ea0fe53c9\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La nutrition est au coeur de notre santé car les aliments consommés sont les moteurs du bon fonctionnement de notre organisme. Or, l’alimentation moderne est souvent appauvrie en nutriments et micronutriments essentiels, que ce soit par les modes de cuissons utilisés, les modes de culture ou de production… L’individu est donc plus susceptible de souffrir de déficit voir de carences nutritionnelles et micronutrionnelles, impactant alors sa santé et sa qualité de vie.</span></span><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-02b9202c-7fff-e57e-59c3-0bf0b594928c\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La micronutrition est une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>approche nutritionnelle individualisée</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> qui, pour satisfaire les besoins en micronutriments de l’individu et combler d’éventuels déficits, utilise une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>alimentation diversifiée</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> et spécifique associée, si nécessaire, à la supplémentation grâce aux produits de </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>santé naturelle</b>.</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> Afin de rétablir le fonctionnement des systèmes de l’organisme, </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>la micronutrition</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> s’attache à sélectionner les nutriments bien précis entrant en jeu dans le fonctionnement normal des systèmes défaillants, permettant ainsi de palier aux carences ou dysfonctionnements grâce à l’utilisation des compléments alimentaires, sur une période plus ou moins longue.</span></span><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-d686449c-7fff-0679-9340-e82a4968ab1e\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Grâce à la micronutrition</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">le nutrithérapeute prodigue des conseils en&nbsp;</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>alimentation-santé</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> mais aussi en </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>compléments alimentaires</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> rigoureusement sélectionnés afin de corriger ces carences, renforcer le système immunitaire,&nbsp;réguler les systèmes organiques&nbsp;et le métabolisme, et atteindre un&nbsp;statut «&nbsp;santé&nbsp;» en&nbsp;micronutriments&nbsp;: vitamines, minéraux, oligo-éléments,&nbsp;acides gras essentiels et antioxydants.</span></span><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-d0d32992-7fff-5617-52b3-20d19b0b2001\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>La Nutrithérapie, grâce à la nutrition et à la micronutrition, permet ainsi d’assurer un fonctionnement optimal de l’organisme, de prévenir certaines pathologies et maladies, d’accompagner le traitement des maladies afin d’en soulager les effets indésirables et les nombreux troubles, et de retarder les effets du vieillissement métabolique.</b></span></span></span></p></span>'),
+(3, 'Diététique Chinoise - Diétothérapie', 'https://images.pexels.com/photos/3296899/pexels-photo-3296899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', '<span id=\"docs-internal-guid-2f88e3b9-7fff-cf0c-ed1e-fdc62a941669\"><h2 dir=\"ltr\" style=\"line-height: 1.2; margin-left: 53.4pt; margin-top: 0pt; margin-bottom: 0pt;\"><br></h2><h2>Une approche nutritionnelle de santé basée sur des siècles d\'expérience</h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Depuis des millénaires, les chinois ont compris que l\'alimentation constitue la base d\'une bonne santé et&nbsp;ont appris au fil des siècles les qualités thérapeutiques des aliments selon leur nature, leur saveur, leurs affinités avec les organes et leurs propriétés sur notre santé globale. La diététique chinoise, ou&nbsp;</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>diétothérapie</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, est une branche de la médecine traditionnelle chinoise,&nbsp;au même titre que l\'acupuncture, la pharmacopée, les massages (Shiatsu), la moxibustion, le Qi Gong, la méditation ou encore le Feng Shui. Ainsi, la diétothérapie chinoise est considérée comme un outil thérapeutique à part entière, au rôle majeur sur notre santé et grâce à laquelle nous pouvons maintenir notre corps&nbsp;</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>en bonne santé et accéder à la longévité</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">.</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\">&nbsp;</p><h2 dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\">Une diététique énergétique du juste équilibre</span></h2><div><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><br></span></div><div><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; text-decoration-skip-ink: none; vertical-align: baseline;\"><span id=\"docs-internal-guid-5308c371-7fff-ec76-a7c5-b3defb6c6073\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Dans la tradition chinoise classique, en nutrition, englobant diététique et gastronomie, il s’agit avant tout de respecter <b>la </b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>nature, les saisons, les besoins et la satisfaction</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> tant intellectuelle que physique du groupe et de l’individu. Loin des régimes privatifs, ses règles simples et millénaires, totalement adaptées à notre culture occidentale, reposent sur les </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>produits naturels, locaux, de saison</b>,</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> cuisinés avec respect et consommés avec plaisir, et qui permettent de retrouver un équilibre général de santé. Dans la culture chinoise, le qualitatif prime donc toujours sur le quantitatif aussi bien dans la proportion des produits utilisés que dans leur choix.</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><span id=\"docs-internal-guid-9cb91dfc-7fff-6ad8-bfa5-84ec918188c9\"></span></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 7.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">En diétothérapie chinoise, une pathologie sera soit yin soit yang, de vide ou de plein, de froid ou de chaud, en surface ou en profondeur, selon l’étude pathologique de la personne. Ainsi, la diététique joue un&nbsp;</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>rôle préventif majeur</b> </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">en utilisant à bon escient les produits de l’alimentation, qui est le fondement même de la Médecine Traditionnelle Chinoise.</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><span id=\"docs-internal-guid-99df83f7-7fff-c309-4fe1-2d4ab069c1a6\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Grâce à une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>alimentation adaptée aux saisons</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, respectueuse de la nature et de ses mouvements, privilégiant la qualité et le respect de préparation de l’aliment, vous observerez avec plus d’attention les </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>vertus thérapeutiques</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> que les aliments ont sur votre corps et le mieux-être que la diététique chinoise procure lorsque l’on réalise sa totale </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>cohérence avec notre moi</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, physique et émotionnel, ainsi que dans notre société occidentale, et son bon sens, déjà connu depuis des millénaires en Orient.</span></span></span></p><h2 style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Le rendez-vous en diétothérapie chinoise</span></span></span></h2><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">La&nbsp; première consultation en diététique chinoise consiste, tout comme la première consultation en naturopathie, à mieux connaître la personne, sa vie, ses activités, ses besoins, et à faire une anamnèse globale. En explorant toutes les sphères organiques de l’individu, tout l’art du diétothérapeute sera, au travers d’une analyse de la </span><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>force vitale appelée le Qi</b></span><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> en médecine traditionnelle chinoise, de pouvoir poser un </span><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>bilan énergétique en terme de Yin ou de</b></span><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b> Yang</b> pour établir un processus thérapeutique adapté à la personne pour la ou les pathologies présentes. Renforcé d’un bilan diététique précis, ce premier rendez-vous permet également d’établir un </span><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">«&nbsp;<b>diagnostic</b>&nbsp;» <b>chinois</b></span><span style=\"font-family: var(--font); font-size: 1rem; background-color: ; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> précis sur les déséquilibres d’un ou plusieurs organes qui va définir les changements quotidiens et alimentaires à mettre en place pour retrouver l’équilibre et la santé naturellement selon les principes de la diététique chinoise.</span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><span id=\"docs-internal-guid-428e812f-7fff-60b2-2486-18286b53a91b\" style=\"\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Formée à cette technique, je vous propose une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>diététique préventive</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">, qui a pour but de préserver votre capital santé, et une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>diététique curative</b>,</span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">&nbsp;principalement dans le cas de troubles chroniques. Selon l’étude pathologique que j’aurai pu définir grâce aux principes de médecine chinoise, je vous adresserai également <b>les </b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>listes d’aliments précis</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"> adaptés aux dominances Yin ou Yang, de vide ou de plein, de la présence d’humidité ou de sécheresse, etc. En effet, chaque aliment possède un principe vital, une nature, une saveur, une couleur et une biodynamie que la diétothérapie utilise pour «&nbsp;nourrir&nbsp;» un organe bien précis et ainsi répondre aux déséquilibres et troubles de santé.</span></span><br></span></p><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 19.5pt;\"><span id=\"docs-internal-guid-03877832-7fff-c4a9-d9aa-b3d59befb283\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Grâce à la diétothérapie chinoise, vous aurez alors toutes les clés en main pour choisir votre alimentation en toute conscience et adapter votre hygiène de vie pour retrouver un mieux-être et une </span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><b>santé optimale de manière naturelle</b></span><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">.</span></span></p></span></span></div></span>'),
+(4, 'Accompagnement Sportif', 'https://images.pexels.com/photos/4498606/pexels-photo-4498606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', '<span id=\"docs-internal-guid-4e393602-7fff-ace9-0e46-28aae9b27351\"><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Intimement convaincue, et scientifiquement prouvé, que le sport participe incontestablement au bien-être physique mais aussi psychique et émotionnel, tout en améliorant la qualité de vie et en accompagnant un vieillissement sain, je vous conseille plus précisément sur les moyens et outils qui vous permettront de bouger, de reprendre le sport en douceur, voire d’améliorer vos performances sportives grâce à un programme individualisé, associé à une nutrition adaptée et à des solutions naturelles pour retrouver forme et vitalité.</span></p><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></p><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><span id=\"docs-internal-guid-abfe6600-7fff-eee6-90bb-cabfe044d22e\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Les bénéfices pour vous grâce à l’accompagnement sportif&nbsp;:</span></span><br></span></p><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><br></p><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span id=\"docs-internal-guid-27b38503-7fff-33d7-9fb4-00e6e94fffd2\"></span></p><ul style=\"margin-top:0;margin-bottom:0;padding-inline-start:48px;\"><li dir=\"ltr\" style=\"list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -11.05pt; padding-left: 0.05pt;\" aria-level=\"1\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\" role=\"presentation\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Programme adapté en fonction de pathologies bien précises, afin d’améliorer la condition physique, la motricité, l’hygiène de vie ou encore l’estime de soi.</span></p></li></ul><font face=\"Roboto, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font><ul style=\"margin-top:0;margin-bottom:0;padding-inline-start:48px;\"><li dir=\"ltr\" style=\"list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -11.05pt; padding-left: 0.05pt;\" aria-level=\"1\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\" role=\"presentation\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Des conseils sportifs et un programme sportif personnalisé associé à un programme diététique et nutritionnel</span></p></li></ul><font face=\"Roboto, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font><ul style=\"margin-top:0;margin-bottom:0;padding-inline-start:48px;\"><li dir=\"ltr\" style=\"list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -11.05pt; padding-left: 0.05pt;\" aria-level=\"1\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\" role=\"presentation\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Un coaching sportif individuel, associé à une éducation diététique et nutritionnelle</span></p></li></ul><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><br></p></span>');
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `event`
-  --
-  CREATE TABLE `event` (
-    `id` int(11) NOT NULL,
-    `title` varchar(255) NOT NULL,
-    `date` datetime NOT NULL,
-    `description` text NOT NULL,
-    `id_category` int(11) NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Structure de la table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `seen` tinyint NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `firstname`, `lastname`, `email`, `message`, `seen`) VALUES
+(1, 'Cécile', 'Ménard', 'cécé@gmail.com', 'Bonjour Cynthia, je souhaiterais de informations sur la prestations accompagnement sportif', 0),
+(2, 'Marie', 'Berger', 'Marie@marie.com', 'Bonjour Cynthia, je souhaiterais de informations sur la prestations Naturo', 0),
+(3, 'Juliette', 'Bertrand', 'juju52@gmail.com', 'Bonjour Cynthia, je souhaiterais de informations sur la prestations accompagnement sportif', 1);
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `recipe`
-  --
-  CREATE TABLE `recipe` (
-    `id` int(11) NOT NULL,
-    `title` varchar(255) NOT NULL,
-    `description` text NOT NULL,
-    `person` int(11) NOT NULL,
-    `time` int(11) NOT NULL,
-    `ingredients` text NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Structure de la table `event`
+--
+
+CREATE TABLE `event` (
+  `id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `description` text NOT NULL,
+  `id_category` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `service`
-  --
-  CREATE TABLE `service` (
-    `id` int(11) NOT NULL,
-    `price` int(11) NOT NULL,
-    `name` varchar(255) NOT NULL,
-    `time` int(11) NOT NULL,
-    `description` text NOT NULL,
-    `image` varchar(255) NOT NULL,
-    `id_category` int(11) NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Structure de la table `recipe`
+--
+
+CREATE TABLE `recipe` (
+  `id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `person` int NOT NULL,
+  `time` int NOT NULL,
+  `ingredients` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `social`
-  --
-  CREATE TABLE `social` (
-    `id` int(11) NOT NULL,
-    `name` varchar(255) NOT NULL,
-    `url` varchar(255) NOT NULL,
-    `icon` varchar(255) NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Structure de la table `service`
+--
+
+CREATE TABLE `service` (
+  `id` int NOT NULL,
+  `price` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `time` int NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `id_category` int NOT NULL,
+  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'https://cynthianutritionnaturo.simplybook.it/v2/'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `service`
+--
+
+INSERT INTO `service` (`id`, `price`, `name`, `time`, `description`, `image`, `id_category`, `url`) VALUES
+(1, 60, 'Première consultation', 120, '<p class=\"MsoNormalCxSpMiddle\" style=\"margin-bottom: 10px;\">Objectif : Bilan vitalité, anamnèse, bilan nutritionnel, conseils hygiène de vie adaptée, programme individuel et personnalisé</p><p class=\"MsoNormalCxSpMiddle\" style=\"margin-bottom: 10px;\"><span style=\"font-family: var(--font); font-size: 1rem;\">En tant que médecine holistique liée au bien-être, la naturopathie considère la personne dans sa globalité afin d’identifier la ou les causes&nbsp;des maladies, des dysfonctionnements organiques et/ou du mal-être dont les symptômes ne sont que les conséquences. Ces causes peuvent être d’ordre physique, psychologique, énergétique ou émotionnel. Lors de cette première consultation, nous prenons le temps d’échanger sur vous, votre vie, vos ressentis, votre état physique et émotionnel, et ce, dans le but de mieux vous connaitre et vous proposer les solutions thérapeutiques adaptées au moyen de méthodes, outils et conseils pour répondre à vos besoins, à votre mode de vie et à votre tempérament.</span></p><p class=\"MsoNormal\" style=\"margin-bottom: 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal; vertical-align: baseline;\">&nbsp;</p><p class=\"MsoNormal\" style=\"margin-bottom: 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal; vertical-align: baseline;\">Grâce à ce premier rendez-vous, vous aurez un premier bilan nutritionnel et naturopathique et des conseils personnalisés et adaptés. A la suite de quoi, sous 72 heures, je vous envoie le bilan complet et détaillé par écrit (email) avec tous mes conseils en nutrition santé et en naturopathie&nbsp;: ex. programme alimentaire sur une semaine type, plantes médicinales et huiles essentielles conseillées, conseils sur des compléments alimentaires, activité physique adaptée, relaxation… A la fin de cette première rencontre, je vous précise également la durée de mise en place de ces premiers changements de vie et le délai le plus adapté avant un prochain rendez-vous de suivi.</p><p class=\"MsoNormal\" style=\"margin-bottom: 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal; vertical-align: baseline;\"><br></p><p class=\"MsoNormal\" style=\"margin-bottom: 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: normal; vertical-align: baseline;\"><span id=\"docs-internal-guid-f092fb41-7fff-23ca-7fa9-1f6537f6ebe1\"></span></p><p dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 10pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Prise en charge - Remboursement mutuelle<br></span></p>', 'https://images.pexels.com/photos/7615463/pexels-photo-7615463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 1, 'https://cynthianutritionnaturo.simplybook.it/v2/#book/service/1/count/1/'),
+(2, 40, 'Consultation de suivi', 60, '<p class=\"MsoNormalCxSpLast\" style=\"margin-bottom: 10px;\">Objectif : suivi du programme nutritionnel et naturopathique, bilan sur les premiers changements, révisions des besoins, conseils additionnels</p><p class=\"MsoNormalCxSpLast\" style=\"margin-bottom: 10px;\"><span style=\"font-family: var(--font); font-size: 1rem;\">Le suivi, d’une durée d’environ 1 heure, permet de faire le point sur ce que vous avez pu mettre en place et appliquer depuis la première consultation, suite à la réception du programme détaillé en nutrition santé et naturopathie. Lors de ce rendez-vous, nous faisons un point sur les changements entrepris et ce que vous avez pu en ressentir sur tous les plans&nbsp;: physique, psychique, émotionnel. Selon le cas et vos ressentis, il est aussi possible de revoir vos besoins, de suivre leur évolution et de continuer ensemble vers ce chemin de santé holistique grâce à de nouveaux conseils et, le cas échéant, un programme complémentaire.</span><br></p><p style=\"margin: 0cm 0cm 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Prise en charge - Remboursement mutuelle<br></p>', 'https://images.pexels.com/photos/7615470/pexels-photo-7615470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 1, 'https://cynthianutritionnaturo.simplybook.it/v2/#book/service/2/count/1/'),
+(3, 80, 'Première consultation', 120, '<p class=\"MsoNormalCxSpMiddle\" style=\"margin-bottom: 10px;\">Objectif : motifs de consultation, anamnèse, enquête alimentaire, bilan énergétique, diagnostic chinois, bilan nutritionnel, conseils hygiène de vie adaptée, conseils alimentaires précis, individuels et adaptés au bilan de diétothérapie.</p><p style=\"margin: 0cm 0cm 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Lors de ce premier rendez-vous, nous ferons le point sur les raisons du choix&nbsp; de cette consultation spécifique et les motifs de santé pour lesquels vous consultez. Tout comme l’anamnèse en naturopathie, en diétothérapie chinoise nous explorons dans un premier temps l’ensemble des sphères organiques afin de déceler les&nbsp;<b>déséquilibres</b>&nbsp;du corps. Pour mieux vous connaître et comprendre les causes qui vous ont amené à consulter en diétothérapie, nous échangerons aussi sur votre mode de vie, vos aspirations, vos activités, vos besoins et sur votre alimentation afin de définir plus précisément les principaux axes de cette&nbsp;<b>diététique du&nbsp;juste équilibre et de la longévité</b>.<o:p></o:p></p><p style=\"margin: 0cm 0cm 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">&nbsp;</p><p style=\"margin-bottom: 10px;\"></p><p style=\"margin: 0cm 0cm 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Grâce à ce premier entretien, vous aurez un premier&nbsp;<b>bilan énergétique chinois</b>&nbsp;répondant aux motifs pour lesquels vous souhaitiez consulter. Vous repartirez avec mes conseils généraux et les changements nécessaires à mettre en place, à votre rythme. Sous 72 heures, je vous envoie, par écrit (mail), votre diagnostic chinois détaillé associé aux choix alimentaires à adopter afin de nourrir les organes défaillants identifiés, rétablir l’équilibre Yin-Yang et retrouver toute votre force vitale, le Qi. Je vous précise également sous quel délai un rendez-vous de suivi sera nécessaire après que vous ayez mis en pratique les conseils de diétothérapie et ainsi de suivre l’évolution des vos ressentis et besoins.</p><p style=\"margin: 0cm 0cm 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\"><br></p><p style=\"margin: 0cm 0cm 0.0001pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Prise en charge - Remboursement mutuelle<br></p>', 'https://images.pexels.com/photos/3296899/pexels-photo-3296899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 3, 'https://cynthianutritionnaturo.simplybook.it/v2/#book/service/3/count/1/'),
+(4, 50, 'Consultation de suivi', 60, '<p class=\"MsoNormalCxSpLast\" style=\"margin-bottom: 10px;\">objectif : suivi du programme alimentaire en diétothérapie, bilan sur les premiers changements, révisions des besoins, conseils additionnels</p><p style=\"margin-bottom: 10px;\"></p><p style=\"margin: 0cm 0cm 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Le suivi, d’une durée d’environ 1 heure, permet de faire le point sur ce que vous avez pu mettre en place et appliquer depuis la première consultation, suite à la réception du programme détaillé en diétothérapie chinoise. Lors de ce rendez-vous, nous faisons un point sur les changements entrepris, notamment alimentaires, et ce que vous avez pu en ressentir sur le plan physiologique et énergétique. L’objectif premier de ce second rendez-vous en diétothérapie est de constater l’effet des aliments conseillés, selon votre diagnostic chinois, sur votre corps et votre santé globale. Selon le cas et vos ressentis, il est possible de revoir vos besoins, de suivre leur évolution et de réajuster le programme alimentaire et diététique en conséquence. Ainsi, nous continuerons ensemble vers ce chemin de santé naturelle grâce à une nutrition énergétique, connue depuis des millénaires pour trouver l’harmonie et maintenir une énergie vitale optimale.</p><p style=\"margin: 0cm 0cm 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Prise en charge - Remboursement mutuelle<br></p>', ' https://images.pexels.com/photos/955137/pexels-photo-955137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 3, 'https://cynthianutritionnaturo.simplybook.it/v2/#book/service/4/count/1/'),
+(5, 60, 'Rendez-vous simple', 60, '<div><span id=\"docs-internal-guid-3e60743b-7fff-7e4d-4aa3-bb843cac8a19\"><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Accompagnement sportif 60€/rendez-vous</span></p><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\"><br></span></p><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Intimement convaincue, et scientifiquement prouvé, que le sport participe incontestablement au bien-être physique mais aussi psychique et émotionnel, tout en améliorant la qualité de vie et en accompagnant un vieillissement sain, je vous conseille plus précisément sur les moyens et outils qui vous permettront de bouger, de reprendre le sport en douceur, voire d’améliorer vos performances sportives grâce à un programme individualisé, associé à une nutrition adaptée et à des solutions naturelles pour retrouver forme et vitalité.</span></p><br><p dir=\"ltr\" style=\"line-height:1.3800000000000001;margin-top:0pt;margin-bottom:10pt;\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Les bénéfices pour vous grâce à l’accompagnement sportif&nbsp;:</span></p><ul style=\"padding-inline-start: 48px;\"><li dir=\"ltr\" style=\"list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -11.05pt; padding-left: 0.05pt;\" aria-level=\"1\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\" role=\"presentation\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Programme adapté en fonction de pathologies bien précises, afin d’améliorer la condition physique, la motricité, l’hygiène de vie ou encore l’estime de soi.</span></p></li></ul><font face=\"Roboto, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font><ul style=\"padding-inline-start: 48px;\"><li dir=\"ltr\" style=\"list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -11.05pt; padding-left: 0.05pt;\" aria-level=\"1\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\" role=\"presentation\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Des conseils sportifs et un programme sportif personnalisé associé à un programme diététique et nutritionnel</span></p></li></ul><font face=\"Roboto, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font><ul style=\"padding-inline-start: 48px;\"><li dir=\"ltr\" style=\"list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -11.05pt; padding-left: 0.05pt;\" aria-level=\"1\"><p dir=\"ltr\" style=\"line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;\" role=\"presentation\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;\">Un coaching sportif individuel, associé à une éducation diététique et nutritionnelle</span></p></li></ul><div><font face=\"Roboto, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font></div><div><span style=\"font-family: Roboto, sans-serif; font-size: 16px;\">Prise en charge - Remboursement mutuelle</span><font face=\"Roboto, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font></div></span></div>', 'https://images.pexels.com/photos/4498606/pexels-photo-4498606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 4, '');
+
 -- --------------------------------------------------------
-  --
-  -- Structure de la table `user`
-  --
-  CREATE TABLE `user` (
-    `id` int(11) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `password` varchar(255) NOT NULL,
-    `is_admin` tinyint(4) NOT NULL
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
 --
-  -- Index pour les tables déchargées
-  --
-  --
-  -- Index pour la table `about`
-  --
-ALTER TABLE
-  `about`
-ADD
-  PRIMARY KEY (`id`);
+-- Structure de la table `social`
 --
-  -- Index pour la table `article`
-  --
-ALTER TABLE
-  `article`
-ADD
-  PRIMARY KEY (`id`),
-ADD
-  KEY `article_category` (`id_category`);
+
+CREATE TABLE `social` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
 --
-  -- Index pour la table `category`
-  --
-ALTER TABLE
-  `category`
-ADD
-  PRIMARY KEY (`id`);
+-- Déchargement des données de la table `social`
 --
-  -- Index pour la table `contact`
-  --
-ALTER TABLE
-  `contact`
-ADD
-  PRIMARY KEY (`id`);
+
+INSERT INTO `social` (`id`, `name`, `url`, `icon`) VALUES
+(1, 'Linkedin', 'https://www.linkedin.com/in/cynthia-diefenbronn/?originalSubdomain=fr', '4'),
+(2, 'Instagram', 'https://www.instagram.com/cynthianutrition_naturo/', '2');
+
+-- --------------------------------------------------------
+
 --
-  -- Index pour la table `event`
-  --
-ALTER TABLE
-  `event`
-ADD
-  PRIMARY KEY (`id`),
-ADD
-  KEY `event_category` (`id_category`);
+-- Structure de la table `user`
 --
-  -- Index pour la table `recipe`
-  --
-ALTER TABLE
-  `recipe`
-ADD
-  PRIMARY KEY (`id`);
+
+CREATE TABLE `user` (
+  `id` int NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `is_admin` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
 --
-  -- Index pour la table `service`
-  --
-ALTER TABLE
-  `service`
-ADD
-  PRIMARY KEY (`id`),
-ADD
-  KEY `service_category` (`id_category`);
+-- Déchargement des données de la table `user`
 --
-  -- Index pour la table `social`
-  --
-ALTER TABLE
-  `social`
-ADD
-  PRIMARY KEY (`id`);
+
+INSERT INTO `user` (`id`, `email`, `password`, `is_admin`) VALUES
+(1, 'plop@plop.com', '$2b$10$92ZrSfrmHDcZzByxsFhUAujPswe6Ktp3Wbnep4WpQSLzy1BH5YYhu', 1);
+
 --
-  -- Index pour la table `user`
-  --
-ALTER TABLE
-  `user`
-ADD
-  PRIMARY KEY (`id`);
+-- Index pour les tables déchargées
 --
-  -- AUTO_INCREMENT pour les tables déchargées
-  --
-  --
-  -- AUTO_INCREMENT pour la table `about`
-  --
-ALTER TABLE
-  `about`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
-  -- AUTO_INCREMENT pour la table `article`
-  --
-ALTER TABLE
-  `article`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+-- Index pour la table `about`
 --
-  -- AUTO_INCREMENT pour la table `category`
-  --
-ALTER TABLE
-  `category`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  AUTO_INCREMENT = 5;
+ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
+
 --
-  -- AUTO_INCREMENT pour la table `contact`
-  --
-ALTER TABLE
-  `contact`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+-- Index pour la table `article`
 --
-  -- AUTO_INCREMENT pour la table `event`
-  --
-ALTER TABLE
-  `event`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `article_category` (`id_category`);
+
 --
-  -- AUTO_INCREMENT pour la table `recipe`
-  --
-ALTER TABLE
-  `recipe`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+-- Index pour la table `category`
 --
-  -- AUTO_INCREMENT pour la table `service`
-  --
-ALTER TABLE
-  `service`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
 --
-  -- AUTO_INCREMENT pour la table `social`
-  --
-ALTER TABLE
-  `social`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+-- Index pour la table `contact`
 --
-  -- AUTO_INCREMENT pour la table `user`
-  --
-ALTER TABLE
-  `user`
-MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
 --
-  -- Contraintes pour les tables déchargées
-  --
-  --
-  -- Contraintes pour la table `article`
-  --
-ALTER TABLE
-  `article`
-ADD
-  CONSTRAINT `article_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
+-- Index pour la table `event`
 --
-  -- Contraintes pour la table `event`
-  --
-ALTER TABLE
-  `event`
-ADD
-  CONSTRAINT `event_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `event_category` (`id_category`);
+
 --
-  -- Contraintes pour la table `service`
-  --
-ALTER TABLE
-  `service`
-ADD
-  CONSTRAINT `service_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
+-- Index pour la table `recipe`
+--
+ALTER TABLE `recipe`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `service`
+--
+ALTER TABLE `service`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `service_category` (`id_category`);
+
+--
+-- Index pour la table `social`
+--
+ALTER TABLE `social`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `about`
+--
+ALTER TABLE `about`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT pour la table `article`
+--
+ALTER TABLE `article`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT pour la table `event`
+--
+ALTER TABLE `event`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `recipe`
+--
+ALTER TABLE `recipe`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `service`
+--
+ALTER TABLE `service`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT pour la table `social`
+--
+ALTER TABLE `social`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `article`
+--
+ALTER TABLE `article`
+  ADD CONSTRAINT `article_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
+
+--
+-- Contraintes pour la table `event`
+--
+ALTER TABLE `event`
+  ADD CONSTRAINT `event_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
+
+--
+-- Contraintes pour la table `service`
+--
+ALTER TABLE `service`
+  ADD CONSTRAINT `service_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
 COMMIT;
-  /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-  /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-  /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
