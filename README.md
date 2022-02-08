@@ -12,7 +12,7 @@
 - ```npm start```
 
 ### Entrypoint available :
-- 'http://localhost:5000
+- 'http://localhost:5000/'
 
 ### Create your own entrypoints (following MVC architecture)
 
@@ -29,4 +29,3 @@ npm run lint
 
 Eslint is configured with [Husky](https://typicode.github.io/husky/#/) to be triggered in the `pre-commit` git hook.
 
-#### tips: in folder models/ you have an example for a complete CRUD Entity
